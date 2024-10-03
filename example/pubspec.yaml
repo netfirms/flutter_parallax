@@ -11,7 +11,8 @@ dependencies:
 
   flutter_parallax:
     path: ../
-
+environment:
+  sdk: '^3.5.0'
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({  Key? key,  required this.title}) : super(key: key);
 
   final String title;
 
@@ -26,7 +26,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  ScrollController _scrollController;
+  late ScrollController _scrollController;
 
   @override
   void initState() {
@@ -42,6 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           new Parallax.outside(
             controller: _scrollController,
+            key: null,
+            direction: null,
             child: new Column(
               children: <Widget>[
                 new Container(
@@ -112,28 +114,28 @@ class _MyHomePageState extends State<MyHomePage> {
         return new Parallax.inside(
           child: new Image.network(
               'https://flutter.io/images/homepage/header-illustration.png'),
-          mainAxisExtent: 150.0,
+          mainAxisExtent: 150.0, key: null, direction: null,
         );
       case 1:
         return new Parallax.inside(
           child: new Image.network(
               'http://t.wallpaperweb.org/wallpaper/nature/3840x1024/9XMedia1280TripleHorizontalMountainsclouds.jpg'),
           mainAxisExtent: 150.0,
-          direction: AxisDirection.right,
+          direction: AxisDirection.right, key: null,
         );
       case 2:
         return new Parallax.inside(
           child: new Image.network(
               'https://flutter.io/images/homepage/header-illustration.png'),
           mainAxisExtent: 150.0,
-          flipDirection: true,
+          flipDirection: true, key: null, direction: null,
         );
       default:
         return new Parallax.inside(
           child: new Image.network(
               'http://t.wallpaperweb.org/wallpaper/nature/3840x1024/9XMedia1280TripleHorizontalMountainsclouds.jpg'),
           mainAxisExtent: 150.0,
-          direction: AxisDirection.left,
+          direction: AxisDirection.left, key: null,
         );
     }
   }
